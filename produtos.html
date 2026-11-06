@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos | Quadra Certa</title>
+  <meta name="description" content="Tênis, bolas e regatas de basquete.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Faixa de benefícios -->
+  <div class="faixa">
+    <span>✔ Vendedores verificados</span>
+    <span>🚚 Frete grátis acima de R$ 299</span>
+    <span>◆ 5% off no Pix</span>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="cabecalho">
+    <div class="container cabecalho__barra">
+      <button class="botao-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <a href="index.html" class="logo" aria-label="Quadra Certa - página inicial">
+        <svg class="logo__icone" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F26A1B" stroke="#1E2430" stroke-width="2.5"/><path d="M2 20h36M20 2v36M8 7c6 6 6 20 0 26M32 7c-6 6-6 20 0 26" fill="none" stroke="#1E2430" stroke-width="2.5"/></svg>
+        <span class="logo__texto">QUADRA<br><b>CERTA</b></span>
+      </a>
+      <form class="busca" action="produtos.html" role="search">
+        <input type="search" name="q" placeholder="Buscar tênis, bolas, regatas..." aria-label="Buscar produtos">
+        <button type="submit" aria-label="Buscar">🔍</button>
+      </form>
+      <a href="carrinho.html" class="link-carrinho" aria-label="Carrinho">
+        🛒 <span class="link-carrinho__texto">Carrinho</span>
+        <span class="contador-carrinho" hidden>0</span>
+      </a>
+    </div>
+    <nav class="menu" aria-label="Categorias">
+      <ul class="container">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html?cat=tenis">Tênis</a></li>
+        <li><a href="produtos.html?cat=bolas">Bolas</a></li>
+        <li><a href="produtos.html?cat=regatas">Regatas</a></li>
+        <li><a class="menu__ofertas" href="produtos.html?ofertas=1">Ofertas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a> › <span id="migalha-atual">Produtos</span></nav>
+
+    <div class="topo-lista">
+      <div>
+        <h1 id="titulo-lista">Todos os produtos</h1>
+        <p id="contagem" class="texto-suave"></p>
+      </div>
+      <div class="topo-lista__acoes">
+        <button class="botao botao--secundario botao--pequeno botao-filtros" type="button">☰ Filtros</button>
+        <label class="ordenar">Ordenar:
+          <select id="ordenar">
+            <option value="relevancia">Mais avaliados</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+            <option value="desconto">Maior desconto</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="layout-lista">
+      <!-- Filtros -->
+      <aside class="filtros" aria-label="Filtros">
+        <form id="form-filtros">
+          <fieldset>
+            <legend>Categoria</legend>
+            <label><input type="radio" name="cat" value="" checked> Todas</label>
+            <label><input type="radio" name="cat" value="tenis"> Tênis</label>
+            <label><input type="radio" name="cat" value="bolas"> Bolas</label>
+            <label><input type="radio" name="cat" value="regatas"> Regatas</label>
+          </fieldset>
+          <fieldset id="filtro-posicao">
+            <legend>Posição de jogo</legend>
+            <label><input type="checkbox" name="posicao" value="armador"> Armador</label>
+            <label><input type="checkbox" name="posicao" value="ala"> Ala</label>
+            <label><input type="checkbox" name="posicao" value="pivo"> Pivô</label>
+          </fieldset>
+          <fieldset>
+            <legend>Preço</legend>
+            <label><input type="radio" name="preco" value="" checked> Qualquer preço</label>
+            <label><input type="radio" name="preco" value="0-400"> Até R$ 400</label>
+            <label><input type="radio" name="preco" value="400-700"> R$ 400 a R$ 700</label>
+            <label><input type="radio" name="preco" value="700-99999"> Acima de R$ 700</label>
+          </fieldset>
+          <fieldset>
+            <legend>Promoções</legend>
+            <label><input type="checkbox" name="ofertas" value="1"> Só ofertas</label>
+          </fieldset>
+          <button type="reset" class="botao botao--secundario botao--pequeno">Limpar filtros</button>
+        </form>
+      </aside>
+
+      <section>
+        <p id="termo-busca" class="texto-suave" hidden></p>
+        <div class="grade-produtos" id="grade-produtos"></div>
+        <div class="vazio" id="sem-resultados" hidden>
+          <p class="vazio__icone">🔍</p>
+          <h2>Nenhum produto encontrado</h2>
+          <p>Tente outro termo ou remova algum filtro.</p>
+          <a href="produtos.html" class="botao">Ver todos os produtos</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <div class="container rodape__grade">
+      <div>
+        <a href="index.html" class="logo logo--claro"><svg class="logo__icone" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#F26A1B" stroke="#1E2430" stroke-width="2.5"/><path d="M2 20h36M20 2v36M8 7c6 6 6 20 0 26M32 7c-6 6-6 20 0 26" fill="none" stroke="#1E2430" stroke-width="2.5"/></svg><span class="logo__texto">QUADRA<br><b>CERTA</b></span></a>
+        <p>O equipamento certo para o seu jogo.</p>
+      </div>
+      <div>
+        <h4>Comprar</h4>
+        <a href="produtos.html?cat=tenis">Tênis</a>
+        <a href="produtos.html?cat=bolas">Bolas</a>
+        <a href="produtos.html?cat=regatas">Regatas</a>
+        <a href="produtos.html?ofertas=1">Ofertas</a>
+      </div>
+      <div>
+        <h4>Ajuda</h4>
+        <a href="carrinho.html">Meu carrinho</a>
+        <a href="index.html#beneficios">Entrega e trocas</a>
+      </div>
+      <div>
+        <h4>Pagamento</h4>
+        <div class="selos-pagamento"><span>Pix</span><span>Crédito</span><span>Débito</span></div>
+      </div>
+    </div>
+    <p class="rodape__aviso">Projeto acadêmico — loja fictícia, nenhum pagamento é real. Fotos: Unsplash.</p>
+  </footer>
+
+  <script src="js/dados.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pagina-produtos.js"></script>
+</body>
+</html>
