@@ -6,7 +6,7 @@ identidade visual e produtos próprios.
 
 > ⚠️ Projeto acadêmico. Nenhum pagamento é real; use apenas dados fictícios.
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 **Obrigatórias**
 - Página inicial com banner, categorias, ofertas e produtos mais avaliados
@@ -19,15 +19,15 @@ identidade visual e produtos próprios.
 - Página de confirmação do pedido
 
 **Extras**
-- 🔍 Busca de produtos
-- 🎚️ Filtros por categoria, posição de jogo, faixa de preço e ofertas + ordenação
-- 💾 Carrinho salvo no navegador (`localStorage`)
-- 🚚 Cálculo de frete simulado pelo CEP (grátis acima de R$ 299)
-- 🏷️ Cupom de desconto (teste `QUADRA10` ou `BASQUETE5`)
-- ◆ 5% de desconto no Pix e QR Code ilustrativo
-- ⭐ Avaliações de produtos
-- ✅ Validação do formulário com máscaras (CPF, celular, CEP, cartão)
-- 📱 Layout responsivo (computador e celular)
+-  Busca de produtos
+-  Filtros por categoria, posição de jogo, faixa de preço e ofertas + ordenação
+-  Carrinho salvo no navegador (`localStorage`)
+-  Cálculo de frete simulado pelo CEP (grátis acima de R$ 299)
+-  Cupom de desconto (teste `QUADRA10` ou `BASQUETE5`)
+-  5% de desconto no Pix e QR Code ilustrativo
+-  Avaliações de produtos
+-  Validação do formulário com máscaras (CPF, celular, CEP, cartão)
+-  Layout responsivo (computador e celular)
 
 ## 🛠️ Tecnologias
 - **HTML5** — estrutura das páginas
